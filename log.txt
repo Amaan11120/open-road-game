@@ -1,0 +1,36 @@
+build	Export APK	﻿2026-11-12T10:11:04.2954687Z ##[group]Run mkdir -p build
+build	Export APK	2026-11-12T10:11:04.2954906Z ^[[36;1mmkdir -p build^[[0m
+build	Export APK	2026-11-12T10:11:04.2955133Z ^[[36;1mgodot --headless --verbose --export-debug "Android" build/open-road.apk^[[0m
+build	Export APK	2026-11-12T10:11:04.2955451Z shell: sh -e {0}
+build	Export APK	2026-11-12T10:11:04.2955578Z ##[endgroup]
+build	Export APK	2026-11-12T10:11:04.3491816Z Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+build	Export APK	2026-11-12T10:11:04.3506167Z TextServer: Added interface "Dummy"
+build	Export APK	2026-11-12T10:11:04.3579619Z TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+build	Export APK	2026-11-12T10:11:04.3636037Z JoypadLinux: udev enabled and loaded successfully.
+build	Export APK	2026-11-12T10:11:04.3636845Z Using "default" pen tablet driver...
+build	Export APK	2026-11-12T10:11:04.3651821Z 
+build	Export APK	2026-11-12T10:11:04.3691199Z TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+build	Export APK	2026-11-12T10:11:04.4320645Z CORE API HASH: 966092234
+build	Export APK	2026-11-12T10:11:04.4326260Z EDITOR API HASH: 444927587
+build	Export APK	2026-11-12T10:11:04.4344774Z EditorSettings: Load OK!
+build	Export APK	2026-11-12T10:11:04.4352506Z EditorTheme: Generating new theme for the config '66886095'.
+build	Export APK	2026-11-12T10:11:04.4354828Z EditorTheme: Generating new icons.
+build	Export APK	2026-11-12T10:11:04.4757192Z EditorTheme: Generating new fonts.
+build	Export APK	2026-11-12T10:11:04.4792987Z EditorTheme: Generating new styles.
+build	Export APK	2026-11-12T10:11:05.2218074Z Loaded system CA certificates
+build	Export APK	2026-11-12T10:11:06.4267916Z EditorSettings: Save OK!
+build	Export APK	2026-11-12T10:11:06.4881036Z Could not find version of build tools that matches Target SDK, using 33.0.2
+build	Export APK	2026-11-12T10:11:07.0350110Z Could not find version of build tools that matches Target SDK, using 33.0.2
+build	Export APK	2026-11-12T10:11:07.0367399Z ERROR: Cannot export project with preset "Android" due to configuration errors:
+build	Export APK	2026-11-12T10:11:07.0367831Z 
+build	Export APK	2026-11-12T10:11:07.0368176Z    at: _fs_changed (editor/editor_node.cpp:1012)
+build	Export APK	2026-11-12T10:11:07.0368615Z ERROR: Project export for preset "Android" failed.
+build	Export APK	2026-11-12T10:11:07.0368963Z    at: _fs_changed (editor/editor_node.cpp:1028)
+build	Export APK	2026-11-12T10:11:07.6168071Z cannot connect to daemon at tcp:5037: Connection refused
+build	Export APK	2026-11-12T10:11:07.6737691Z EditorSettings: Save OK!
+build	Export APK	2026-11-12T10:11:07.6897558Z XR: Clearing primary interface
+build	Export APK	2026-11-12T10:11:07.6900687Z XR: Removed interface "Native mobile"
+build	Export APK	2026-11-12T10:11:07.6901047Z XR: Removed interface "OpenXR"
+build	Export APK	2026-11-12T10:11:07.7370194Z Orphan StringName: Node (static: 4, total: 5)
+build	Export APK	2026-11-12T10:11:07.7370739Z StringName: 1 unclaimed string names at exit.
+build	Export APK	2026-11-12T10:11:07.7765898Z ##[error]Process completed with exit code 1.
