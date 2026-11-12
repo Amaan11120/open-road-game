@@ -13,10 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Godot export tools
+      - name: Show environment (for debugging)
         run: |
-          mkdir -p ~/.local/share/godot/export_templates
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          godot --version || true
+          ls /root/.local/share/godot/export_templates/ || true
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          which javac || true
+
+      - name: Set up Godot export tools
+        shell: bash
+        run: |
           keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore /tmp/debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
           JDK=$(dirname $(dirname $(readlink -f $(which javac))))
           SDK=${ANDROID_HOME:-/usr/lib/android-sdk}
