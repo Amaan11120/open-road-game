@@ -13,12 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Show environment (for debugging)
+      - name: Copy export templates to Godot's home
+        shell: bash
         run: |
-          godot --version || true
-          ls /root/.local/share/godot/export_templates/ || true
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          which javac || true
+          mkdir -p ~/.local/share/godot/export_templates
+          cp -r /root/.local/share/godot/export_templates/* ~/.local/share/godot/export_templates/
+          ls ~/.local/share/godot/export_templates/
+          ls ~/.local/share/godot/export_templates/*/ | head -20
 
       - name: Set up Godot export tools
         shell: bash
