@@ -11,6 +11,7 @@ func _ready() -> void:
     _setup_environment()
     _build_road()
     _build_trees()
+    _spawn_car()
 
 
 func _process(_delta: float) -> void:
@@ -91,3 +92,31 @@ func _build_trees() -> void:
         leaves.material_override = leaf_mat
         leaves.position = Vector3(x, 4.0, z)
         add_child(leaves)
+
+
+var _car
+var _controls
+
+
+# Adds invisible ground collision, the car, and the touch buttons.
+func _spawn_car() -> void:
+    var ground := StaticBody3D.new()
+    var ground_shape := CollisionShape3D.new()
+    var ground_box := BoxShape3D.new()
+    ground_box.size = Vector3(400.0, 1.0, 800.0)
+    ground_shape.shape = ground_box
+    ground.add_child(ground_shape)
+    ground.position = Vector3(0.0, -0.5, -150.0)
+    add_child(ground)
+
+    _car = load("res://scripts/car.gd").new()
+    _car.position = Vector3(0.0, 1.0, 30.0)
+    add_child(_car)
+
+    _controls = load("res://scripts/touch_controls.gd").new()
+    add_child(_controls)
+
+
+func _physics_process(_delta: float) -> void:
+    if _car and _controls:
+        _car.set_inputs(_controls.steer, _controls.throttle, _controls.brake)
